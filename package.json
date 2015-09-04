@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "immutable": "^3.7.5",
-    "react": "^0.13.3"
+    "react": "^0.13.3",
+    "react-router": "^0.13.3"
   }
 }
