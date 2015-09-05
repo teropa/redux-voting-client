@@ -22,6 +22,7 @@
   "dependencies": {
     "immutable": "^3.7.5",
     "react": "^0.13.3",
+    "react-redux": "^2.1.0",
     "react-router": "^0.13.3",
     "redux": "^2.0.0"
   }

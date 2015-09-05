@@ -1,10 +1,11 @@
 import React from 'react/addons';
 import Router, {Route, DefaultRoute} from 'react-router';
 import {createStore} from 'redux';
+import {Provider} from 'react-redux';
 import reducer from './reducer';
 import App from './components/App';
-import Voting from './components/Voting';
-import Results from './components/Results';
+import {VotingContainer} from './components/Voting';
+import {ResultsContainer} from './components/Results';
 
 const store = createStore(reducer);
 store.dispatch({
@@ -19,13 +20,15 @@ store.dispatch({
 
 >>>>>>> bed60b8... reducer and redux store
 const routes = <Route handler={App}>
-  <Route path="/results" handler={Results} />
-  <DefaultRoute handler={Voting} />
+  <Route path="/results" handler={ResultsContainer} />
+  <DefaultRoute handler={VotingContainer} />
 </Route>;
 
 Router.run(routes, (Root) => {
   React.render(
-    <Root />,
+    <Provider store={store}>
+      {() => <Root />}
+    </Provider>,
     document.getElementById('app')
   );
 
