@@ -1,0 +1,123 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #673AB7;
+  color: white;
+}
+
+/* Voting Screen */
+
+.voting {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  user-select: none;
+}
+
+.voting button {
+  flex: 1 0 0;
+
+  background-color: #673AB7;
+  border-width: 0;
+}
+.voting button:first-child {
+  border-bottom: 1px solid white;
+}
+.voting button:active {
+  background-color: white;
+  color: #311B92;
+}
+.voting button.voted {
+  background-color: #311B92;
+}
+.voting button:not(.voted) .label {
+  visibility: hidden;
+}
+.voting button .label {
+  opacity: 0.87;
+}
+.voting button.votedAgainst * {
+  opacity: 0.3;
+}
+
+@media only screen and (min-device-width: 500px) {
+  .voting {
+    flex-direction: row;
+  }
+  .voting button:first-child {
+    border-bottom-width: 0;
+    border-right: 1px solid white;
+  }
+}
+
+/* Results Screen */
+
+.results {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+.results .tally {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.results .tally .entry {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.results .tally h1 {
+  width: 25%;
+}
+.results .tally .voteVisualization {
+  height: 50px;
+  width: 50%;
+  display: flex;
+  justify-content: flex-start;
+
+  background-color: #7E57C2;
+}
+.results .tally .votesBlock {
+  background-color: white;
+  transition: width 0.5s;
+}
+.results .tally .voteCount {
+  font-size: 2rem;
+}
+
+.results .management {
+  display: flex;
+
+  height: 2em;
+  border-top: 1px solid #aaa;
+}
+
+.results .management button {
+  border: 0;
+  background-color: black;
+  color: #aaa;
+}
+.results .management .next {
+  flex: 1;
+}
+
+/* Winner View */
+
+.winner {
+  font-size: 4rem;
+  text-align: center;
+}
