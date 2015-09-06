@@ -5,19 +5,23 @@ function setState(state, newState) {
 }
 
 function vote(state, entry) {
+  const currentRound = state.getIn(['vote', 'round']);
   const currentPair = state.getIn(['vote', 'pair']);
   if (currentPair && currentPair.includes(entry)) {
-    return state.set('hasVoted', entry);
+    return state.set('myVote', Map({
+      round: currentRound,
+      entry
+    }));
   } else {
     return state;
   }
 }
 
 function resetVote(state) {
-  const hasVoted = state.get('hasVoted');
-  const currentPair = state.getIn(['vote', 'pair'], List());
-  if (hasVoted && !currentPair.includes(hasVoted)) {
-    return state.remove('hasVoted');
+  const votedForRound = state.getIn(['myVote', 'round']);
+  const currentRound = state.getIn(['vote', 'round']);
+  if (votedForRound !== currentRound) {
+    return state.remove('myVote');
   } else {
     return state;
   }
