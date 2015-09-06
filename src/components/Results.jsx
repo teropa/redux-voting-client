@@ -1,6 +1,7 @@
 import React from 'react/addons';
 import {connect} from 'react-redux';
 import Winner from './Winner';
+import * as actionCreators from '../action_creators';
 
 export const Results = React.createClass({
   mixins: [React.addons.PureRenderMixin],
@@ -46,4 +47,7 @@ function mapStateToProps(state) {
   }
 }
 
-export const ResultsContainer = connect(mapStateToProps)(Results);
+export const ResultsContainer = connect(
+  mapStateToProps,
+  actionCreators
+)(Results);
