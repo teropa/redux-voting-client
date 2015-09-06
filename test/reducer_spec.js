@@ -5,6 +5,19 @@ import reducer from '../src/reducer';
 
 describe('reducer', () => {
 
+  it('handles SET_CLIENT_ID', () => {
+    const initialState = Map();
+    const action = {
+      type: 'SET_CLIENT_ID',
+      clientId: '1234'
+    };
+    const nextState = reducer(initialState, action);
+
+    expect(nextState).to.equal(fromJS({
+      clientId: '1234'
+    }));
+  });
+  
   it('handles SET_STATE', () => {
     const initialState = Map();
     const action = {

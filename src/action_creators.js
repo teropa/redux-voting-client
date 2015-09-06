@@ -1,3 +1,10 @@
+export function setClientId(clientId) {
+  return {
+    type: 'SET_CLIENT_ID',
+    clientId
+  };
+}
+
 export function setState(state) {
   return {
     type: 'SET_STATE',
