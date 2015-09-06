@@ -121,3 +121,18 @@ body {
   font-size: 4rem;
   text-align: center;
 }
+
+/* Connection State */
+
+.connectionState {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  padding: 5px;
+
+  text-align: center;
+
+  background-color: #B71C1C;
+}
