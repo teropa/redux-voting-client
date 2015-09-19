@@ -1,4 +1,4 @@
-import React from 'react/addons';
+import React from 'react';
 import Router, {Route, DefaultRoute} from 'react-router';
 import {createStore, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
