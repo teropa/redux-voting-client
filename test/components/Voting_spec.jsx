@@ -84,16 +84,16 @@ describe('Voting', () => {
   });
 
   it('does update DOM when prop changes', () => {
-    let pair = List.of('Trainspotting', '28 Days Later');
-    let component = renderIntoDocument(
+    const pair = List.of('Trainspotting', '28 Days Later');
+    const component = renderIntoDocument(
       <Voting pair={pair} />
     );
 
     let firstButton = scryRenderedDOMComponentsWithTag(component, 'button')[0];
     expect(firstButton.getDOMNode().textContent).to.equal('Trainspotting');
 
-    pair = pair.set(0, 'Sunshine');
-    component.setProps({pair: pair});
+    const newPair = pair.set(0, 'Sunshine');
+    component.setProps({pair: newPair});
     firstButton = scryRenderedDOMComponentsWithTag(component, 'button')[0];
     expect(firstButton.getDOMNode().textContent).to.equal('Sunshine');
   });
