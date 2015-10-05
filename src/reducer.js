@@ -8,7 +8,7 @@ function setConnectionState(state, connectionState, connected) {
 }
 
 function setState(state, newState) {
-  return state.merge(newState);
+  return state.remove('winner').merge(newState);
 }
 
 function vote(state, entry) {
