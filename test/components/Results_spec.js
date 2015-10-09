@@ -15,7 +15,7 @@ describe('Results', () => {
       <Results pair={pair} tally={tally} />
     );
     const entries = scryRenderedDOMComponentsWithClass(component, 'entry');
-    const [train, days] = entries.map(e => e.getDOMNode().textContent);
+    const [train, days] = entries.map(e => e.textContent);
 
     expect(entries.length).to.equal(2);
     expect(train).to.contain('Trainspotting');
