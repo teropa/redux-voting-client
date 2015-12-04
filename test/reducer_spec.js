@@ -13,7 +13,7 @@ describe('reducer', () => {
     };
     const nextState = reducer(initialState, action);
 
-    expect(nextState).to.equal(fromJS({
+    expect(nextState).to.deep.equal(fromJS({
       clientId: '1234'
     }));
   });
@@ -31,7 +31,7 @@ describe('reducer', () => {
     };
     const nextState = reducer(initialState, action);
 
-    expect(nextState).to.equal(fromJS({
+    expect(nextState).to.deep.equal(fromJS({
       vote: {
         pair: ['Trainspotting', '28 Days Later'],
         tally: {Trainspotting: 1}
@@ -52,7 +52,7 @@ describe('reducer', () => {
     };
     const nextState = reducer(initialState, action);
 
-    expect(nextState).to.equal(fromJS({
+    expect(nextState).to.deep.equal(fromJS({
       vote: {
         pair: ['Trainspotting', '28 Days Later'],
         tally: {Trainspotting: 1}
@@ -72,7 +72,7 @@ describe('reducer', () => {
     };
     const nextState = reducer(undefined, action);
 
-    expect(nextState).to.equal(fromJS({
+    expect(nextState).to.deep.equal(fromJS({
       vote: {
         pair: ['Trainspotting', '28 Days Later'],
         tally: {Trainspotting: 1}
@@ -91,7 +91,7 @@ describe('reducer', () => {
     const action = {type: 'VOTE', entry: 'Trainspotting'};
     const nextState = reducer(state, action);
 
-    expect(nextState).to.equal(fromJS({
+    expect(nextState).to.deep.equal(fromJS({
       vote: {
         round: 42,
         pair: ['Trainspotting', '28 Days Later'],
@@ -115,7 +115,7 @@ describe('reducer', () => {
     const action = {type: 'VOTE', entry: 'Sunshine'};
     const nextState = reducer(state, action);
 
-    expect(nextState).to.equal(fromJS({
+    expect(nextState).to.deep.equal(fromJS({
       vote: {
         round: 42,
         pair: ['Trainspotting', '28 Days Later'],
@@ -147,7 +147,7 @@ describe('reducer', () => {
     };
     const nextState = reducer(initialState, action);
 
-    expect(nextState).to.equal(fromJS({
+    expect(nextState).to.deep.equal(fromJS({
       vote: {
         round: 43,
         pair: ['Sunshine', 'Trainspotting']
