@@ -1,4 +1,4 @@
-import {List, Map} from 'immutable';
+import {Map} from 'immutable';
 
 function setConnectionState(state, connectionState, connected) {
   return state.set('connection', Map({
