@@ -1,3 +1,4 @@
+import ReactDOM from 'react-dom';
 import React from 'react/addons';
 import {List} from 'immutable';
 import {Voting} from '../../src/components/Voting';
@@ -63,7 +64,7 @@ describe('Voting', () => {
     const buttons = scryRenderedDOMComponentsWithTag(component, 'button');
     expect(buttons.length).to.equal(0);
 
-    const winner = React.findDOMNode(component.refs.winner);
+    const winner = ReactDOM.findDOMNode(component.refs.winner);
     expect(winner).to.be.ok;
     expect(winner.textContent).to.contain('Trainspotting');
   });
