@@ -1,9 +1,10 @@
-import React from 'react/addons';
+import React from 'react';
+import {
+  renderIntoDocument,
+  findRenderedDOMComponentWithTag
+} from 'react-addons-test-utils';
 import {expect} from 'chai';
 import {ConnectionState} from '../../src/components/ConnectionState';
-
-const {renderIntoDocument, findRenderedDOMComponentWithTag}
-  = React.addons.TestUtils;
 
 describe('ConnectionState', () => {
 

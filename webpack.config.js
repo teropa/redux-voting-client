@@ -1,4 +1,5 @@
 var webpack = require('webpack');
+var autoprefixer = require('autoprefixer');
 
 module.exports = {
   entry: [
@@ -13,7 +14,7 @@ module.exports = {
       loader: 'react-hot!babel'
     }, {
       test: /\.css$/,
-      loader: 'style!css!autoprefixer?browsers=last 2 versions'
+      loader: 'style!css!postcss'
     }]
   },
   resolve: {
@@ -30,5 +31,8 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin()
-  ]
+  ],
+  postcss: function () {
+    return [autoprefixer];
+  }
 };
