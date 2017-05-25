@@ -1,6 +1,7 @@
 {
   "name": "voting-client",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js \"test/**/*@(.js|.jsx)\""
@@ -43,18 +44,5 @@
       "es2015",
       "react"
     ]
-  },
-  "directories": {
-    "test": "test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/teropa/redux-voting-client.git"
-  },
-  "keywords": [],
-  "bugs": {
-    "url": "https://github.com/teropa/redux-voting-client/issues"
-  },
-  "homepage": "https://github.com/teropa/redux-voting-client#readme",
-  "description": ""
+  }
 }
